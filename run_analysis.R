@@ -43,7 +43,8 @@ names(DatosOrdenados)<-gsub("-std()", "Estandard", names(DatosOrdenados), ignore
 names(DatosOrdenados)<-gsub("-freq()", "Frequencia", names(DatosOrdenados), ignore.case = TRUE)
 names(DatosOrdenados)<-gsub("angle", "Angulo", names(DatosOrdenados))
 names(DatosOrdenados)<-gsub("gravity", "Gravedad", names(DatosOrdenados))
-#Crear un conjuto de datos con las medias.y crear una rchivo.
+
+#Crear un conjuto de datos con las medias y crear una archivo con la salida de los datos.
 FinalDatos <- DatosOrdenados %>%
   group_by(sujeto, actividad) %>%
   summarise_all(funs(mean))
